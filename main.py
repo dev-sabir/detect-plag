@@ -15,7 +15,8 @@ async def create_upload_file(file1: UploadFile = File(...), file2: UploadFile= F
     save_file(file1.filename, contents1)
     save_file(file2.filename, contents2)
     res = Files(file1, file2)
-    if res:
+    print(res)
+    if res >= 0:
         return {"Result": res}
     else:
         return {"Error": "Some Error"}
